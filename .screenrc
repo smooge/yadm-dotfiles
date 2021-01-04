@@ -1,0 +1,42 @@
+# -*- mode: conf -*-
+
+# This code is based off the base-files inputrc from Debian/Cygwin and
+# some other systems. As such the following license is taken verbatum
+# for this file.
+
+# To the extent possible under law, the author(s) have dedicated all 
+# copyright and related and neighboring rights to this software to the 
+# public domain worldwide. This software is distributed without any warranty. 
+
+# To the extent possible under law, the author(s) have dedicated all
+# copyright and related and neighboring rights to this software to the
+# public domain worldwide. This software is distributed without any warranty.
+
+# Because I don't like to assume people can find links I am changing
+# where the license is going to be listed. It is included in the
+# my-yadm-dotfiles/Documentation/Licenses directory as a copy of the 
+# <http://creativecommons.org/publicdomain/zero/1.0/> from 2021-01-04.
+
+# General rules of these config files is to be explicite versus
+# implicit. We will use 'source' versus '.' and we will use variables
+# versus like ${HOME} versus ~. The main goal is to be clearer for
+# someone else to see what I am trying to do (or have stolen from
+# others to be have done.)
+
+# A basic screenrc file for my environment.
+startup_message       off             # default: on
+vbell                 off             # default: ???
+shelltitle '$ |bash'
+  
+# Status line.
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+# Default screens
+screen -t shell0        0
+screen -t shell1        1
+screen -t shell2        2
+screen -t shell3        3
+#
+#

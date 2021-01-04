@@ -1,0 +1,34 @@
+## A basic gitconfig for my default user.
+[user]
+    name = Stephen Smoogen
+    email = smooge@smoogespace.com
+    signingkey = 0xF20A1093D7840F95
+
+[push]
+    default = current
+
+[pull]
+    rebase = true
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+
+[core]
+    excludesfile = $HOME/.gitignore_global
+
+[branch]
+    autosetuprebase = always
+
+[apply]
+    whitespace = fix
+ 
+[rebase]
+    autoStash = true
+
+[gpg]
+    program = gpg2
+
+
