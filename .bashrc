@@ -63,6 +63,7 @@ export SYSTEMD_PAGER=
 # User specific aliases and functions
 export LC_COLLATE=C
 export LC_LANG="en_GB.utf8"
+export LC_TIME="en_GB"
 export EDIT='/usr/bin/emacs'
 export EDITOR='/usr/bin/emacs'
 export VISUAL='/usr/bin/emacs'
