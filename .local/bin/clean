@@ -1,0 +1,102 @@
+#!/usr/bin/python2
+
+'''
+A program to clean out cruft from the current working directory.
+'''
+
+from glob import glob
+import os
+import optparse
+
+
+def clean_local_directory(force=False, quiet=False, dry_run=False):
+    '''
+    A function to clean out the local directory of known files that
+    tend to end up clogging up a filesystem after a while.
+
+    force defaults to False so that you are asked what is going on.
+    quiet defaults to False so we are going to show everything.
+    '''
+    remove_patterns = ["#*#", ".#*#", "core*", "a.out*",
+                       ".??*~", "*~", "dead.letter*",
+                       ".saves*", "*.bak"]
+
+    our_glob = []
+    for rmpat in remove_patterns:
+        our_glob = our_glob + glob(rmpat)
+
+    our_glob.sort()
+    our_direc = os.getcwd()
+
+    # We may not have any files in this glob.
+    if our_glob == []:
+        if not quiet:
+            print "No files in %s match our pattern." % our_direc
+        return
+
+    if dry_run:
+        print "Pattern we are trying to match"
+        print remove_patterns
+        print "Files in %s, that we match" % our_direc
+        for my_file in our_glob:
+            print my_file,
+        print
+        return
+
+    for my_file in our_glob:
+        if not force:
+            try:
+                accept = raw_input("Remove %s y/[n]? " % my_file)
+            except:
+                exit(1)
+        else:
+            accept = "y"
+        if accept.lower().startswith("y"):
+            if os.path.isfile(my_file):
+                try:
+                    os.remove(my_file)
+                except:
+                    if not quiet:
+                        print "Problem with file %s" % my_file
+            else:
+                if not quiet:
+                    print "%s is not a regular file. Not removing." % my_file
+        else:
+            pass
+    return
+###
+
+
+def main():
+    '''
+    Your usual main function meant to cut out the clutter from the
+    general section of the script.
+    '''
+
+    parser = optparse.OptionParser(
+        description="A program to clean various cruft in the current" +
+                    "working directory.",
+        prog="clean.py",
+        version="1.0.0",
+        usage="%prog [-f|--force] [-q|--quiet]")
+    parser.add_option("-f", "--force", action="store_true",
+                 default=False,
+                 help="Disables prompts and assumes y on all file removals.",
+                 dest="force")
+    parser.add_option("-q", "--quiet", action="store_true",
+                 default=False,
+                 help="Disables extra chatty info",
+                 dest="quiet")
+    parser.add_option("-n", "--dry-run", action="store_true",
+                 default=False,
+                 help="Just show the files that would be matched.",
+                 dest="dry_run")
+
+    options, arguments = parser.parse_args()
+    clean_local_directory(options.force, options.quiet, options.dry_run)
+    return
+
+###
+
+if __name__ == '__main__':
+    main()

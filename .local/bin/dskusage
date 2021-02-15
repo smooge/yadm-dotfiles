@@ -1,0 +1,17 @@
+#!/bin/bash
+##
+## A simple script to get a rough usage of diskspace in the current
+## directory and below.
+##
+DSKFILE=./dsk
+SORT='/bin/sort -nr'
+DATE=/bin/date
+DU='/usr/bin/du -s -c'
+RM='/bin/rm -f'
+
+$RM $DSKFILE
+( ($DATE ; $DU ./* ./.??*  | $SORT ; $DATE ) > $DSKFILE &)
+
+##
+## As simple as that.
+##
