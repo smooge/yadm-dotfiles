@@ -41,7 +41,8 @@ alias ipsort="sort -t\. -n -k1,1 -k2,2 -k3,3 -k4,4"
 # I usually have a clean python script which looks for programs to
 # remove in the current directory. Sometimes.. you just want to clean
 # everything without prompts
-alias clean_it_all="find . -type f -name '*~' -o -name '#*#' -print0 | xargs -0 \rm -v"
+alias find_it_all="find . -type f \( -name '*~' -o -name '*#' \) -print "
+alias clean_it_all="find . -type f \( -name '*~' -o -name '*#' \) -print0 | xargs -0 \rm -v"
 
 # Aliases gotten from other people over the years.
 alias whence='type -a'                        # where, of a sort
