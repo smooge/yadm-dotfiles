@@ -20,10 +20,15 @@
 # others to be have done.)
 
 # Ok check to see if system bashes have been sourced.
-if [ -f /etc/bashrc ]; then
+if [ -z "${BASHRCSOURCED}" ] ; then
+    if [ -f /etc/bashrc ]; then
+        # Bash login shells run only /etc/profile
+        # Bash non-login shells run only /etc/bashrc
+        # Check for double sourcing is done in /etc/bashrc.
 	. /etc/bashrc
+    fi
 fi
-
+    
 # User dependent .bashrc file
 
 # Check to see if we are running interactively, and if not return to
@@ -61,11 +66,6 @@ export HISTFILESIZE=1048576
 # screen, the LINES and COLUMNS which curses apps use will be correct
 # (versus having to do this by hand via resize).
 shopt -s checkwinsize
-
-
-# User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-export PATH
 
 # Uncomment the following line if you don't like systemctl's
 # auto-paging feature:

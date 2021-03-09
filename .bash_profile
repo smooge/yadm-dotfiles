@@ -23,6 +23,11 @@
 # .bashrc. That will test if it is an interactive environment and fall
 # out if it isn't. 
 
+# Ok check to see if system bash_profile have been sourced.
+if [ -f /etc/profile ]; then
+       . /etc/profile
+fi
+
 # Get the aliases and functions
 if [ -f "${HOME}/.bashrc" ]; then
     source "${HOME}/.bashrc"
