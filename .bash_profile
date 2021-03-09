@@ -66,4 +66,7 @@ for pathlet in "${HOME}/man" "${HOME}/.local/man"; do
     fi
 done
 
+# User specific environment and startup programs
+export GPG_TTY=$(tty)
+
 ## End of File

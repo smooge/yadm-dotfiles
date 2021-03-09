@@ -1,3 +1,6 @@
+# -*- mode: sh -*-
+# .bash_functions
+# various functions for bash
 
 function fwho()
 {

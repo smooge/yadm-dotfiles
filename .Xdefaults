@@ -1,0 +1,40 @@
+#ifdef COLOR
+*customization: -color
+#endif
+
+#define XAW3DCOLOR gray75
+/* #define BLACK_BG_XTERMS */
+/* #define RECOLOR_XPAINT */
+#define RECOLOR_GHOSTVIEW
+#define RECOLOR_XDVI
+!
+! Defaults for everything
+!
+*VisualBell:                    true
+
+!##########################################
+!#  Xterms
+!##########################################
+xterm*vt100.geometry:           80x25
+xterm*foreground:               #e066ff
+xterm*background:               #000000
+xterm*cursorColor:              White
+xterm*pointerColor:             Red
+xterm*jumpScroll:               true
+xterm*scrollBar:                true
+xterm*savelines:                2000
+xterm*font:                     *-fixed-*-*-*-18-*
+!#
+!# rxvt
+!#
+rxvt.geometry:                  80x25
+rxvt.font:                      *-fixed-*-*-*-18-*
+rxvt.foreground:                #e066ff
+rxvt.background:                #000000
+!##########################################
+!#  Emacs
+!##########################################
+emacs*Font:                     *-fixed-*-*-*-18-*
+emacs*Geometry:                 80x40
+emacs*Foreground:               #ffffff
+emacs*Background:               #000000

@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 # .bashrc
 # This code is based off the base-files bashrc from Debian/Cygwin and
 # some other systems. As such the following license is taken verbatum
@@ -19,7 +20,9 @@
 # others to be have done.)
 
 # Ok check to see if system bashes have been sourced.
-
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
 # User dependent .bashrc file
 
@@ -46,7 +49,9 @@ export HISTCONTROL=ignoreboth
 # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
 # The '&' is a special pattern which suppresses duplicate entries.
 # export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
-# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
+export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
+
+export HISTFILESIZE=1048576
 
 # Whenever displaying the prompt, write the previous line to disk
 # export PROMPT_COMMAND="history -a"
@@ -57,10 +62,16 @@ export HISTCONTROL=ignoreboth
 # (versus having to do this by hand via resize).
 shopt -s checkwinsize
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
+
+# User specific environment
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH
+
+# Uncomment the following line if you don't like systemctl's
+# auto-paging feature:
 export SYSTEMD_PAGER=
 
-# User specific aliases and functions
+# General variables.
 export LC_COLLATE=C
 export LC_LANG="en_GB.utf8"
 export LC_TIME="en_GB"

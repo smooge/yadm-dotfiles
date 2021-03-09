@@ -1,3 +1,4 @@
+# -*- mode: conf -*-
 ## A basic gitconfig for my default user.
 [user]
     name = Stephen Smoogen
@@ -31,4 +32,16 @@
 [gpg]
     program = gpg2
 
+[init]
+    defaultBranch = main
 
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lol2 = log --graph --format='%h %s (%an)'
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    d = diff --src-prefix='a/ ' --dst-prefix='b/ '
+    s = status --short
+    pr = pull --rebase
+    ca = commit --amend
+    can = commit --amend --no-edit
+    unadd = reset HEAD
