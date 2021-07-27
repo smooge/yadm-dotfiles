@@ -16,7 +16,7 @@
 !#  Xterms
 !##########################################
 xterm*vt100.geometry:           80x25
-xterm*foreground:               #e066ff
+xterm*foreground:               #66FF66
 xterm*background:               #000000
 xterm*cursorColor:              White
 xterm*pointerColor:             Red

@@ -50,38 +50,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(display-time-mode t)
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-interval 30)
+ '(display-time-mode t)
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
- '(mail-user-agent (quote gnus-user-agent))
- '(perl-tab-to-comment t)
+ '(js-indent-level 2)
+ '(mail-user-agent 'gnus-user-agent)
  '(package-selected-packages
-   '(
-     babel
-     babel-repl
-     csv-mode
-     dash
-     easy-hugo
-     f
-     json-mode
-     markdown-changelog
-     markdown-mode
-     markdown-mode+
-     markdown-toc
-     markdownfmt
-     ox-asciidoc
-     ox-gfm
-     ox-html5slide
-     ox-hugo
-     ox-json
-     ox-minutes
-     toc-org
-     yaml-mode
-
-     )))
+   '(babel babel-repl csv-mode dash easy-hugo f jinja2-mode json-mode markdown-changelog markdown-mode markdown-mode+ markdown-toc markdownfmt ox-asciidoc ox-gfm ox-html5slide ox-hugo ox-json ox-minutes toc-org yaml-mode))
+ '(perl-tab-to-comment t))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -103,6 +82,7 @@
 (use-package csv-mode)
 (use-package dash)
 (use-package f)
+(use-package jinja2-mode)
 (use-package json-mode)
 (use-package lua-mode)
 (use-package markdown-mode)
