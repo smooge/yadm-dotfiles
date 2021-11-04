@@ -15,7 +15,7 @@ alias ftp="ftp -i"
 
 # I much prefer my ls to have time in ISO format to make sorting
 # easier. 
-alias ls='ls -F --time-style=long-iso'
+alias ls='/bin/ls -F --time-style=long-iso'
 
 # This is a holdover from where more may actually be a different
 # command which would normally be very limited.
@@ -56,7 +56,7 @@ alias unsetenv=unset
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='/bin/ls --color=auto -F --time-style=long-iso'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 

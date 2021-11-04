@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 '''
 A program to clean out cruft from the current working directory.
@@ -31,22 +31,22 @@ def clean_local_directory(force=False, quiet=False, dry_run=False):
     # We may not have any files in this glob.
     if our_glob == []:
         if not quiet:
-            print "No files in %s match our pattern." % our_direc
+            print("No files in %s match our pattern." % our_direc)
         return
 
     if dry_run:
-        print "Pattern we are trying to match"
-        print remove_patterns
-        print "Files in %s, that we match" % our_direc
+        print("Pattern we are trying to match")
+        print(remove_patterns)
+        print("Files in %s, that we match" % our_direc)
         for my_file in our_glob:
-            print my_file,
-        print
+            print(my_file, end=' ')
+        print()
         return
 
     for my_file in our_glob:
         if not force:
             try:
-                accept = raw_input("Remove %s y/[n]? " % my_file)
+                accept = input("Remove %s y/[n]? " % my_file)
             except:
                 exit(1)
         else:
@@ -57,10 +57,10 @@ def clean_local_directory(force=False, quiet=False, dry_run=False):
                     os.remove(my_file)
                 except:
                     if not quiet:
-                        print "Problem with file %s" % my_file
+                        print("Problem with file %s" % my_file)
             else:
                 if not quiet:
-                    print "%s is not a regular file. Not removing." % my_file
+                    print("%s is not a regular file. Not removing." % my_file)
         else:
             pass
     return

@@ -2,7 +2,7 @@
 ## A basic gitconfig for my default user.
 [user]
     name = Stephen Smoogen
-    email = smooge@smoogespace.com
+    email = ssmoogen@redhat.com
     signingkey = 0xF20A1093D7840F95
 
 [push]
