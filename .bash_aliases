@@ -31,7 +31,7 @@ alias get_cursor='echo -en "\e[?25h"'
 alias ssh_sane='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
 
 ## Set up the ssh initial environment
-alias sshadd='ssh-add ~/.ssh/id_fedora_rsa ~/.ssh/id_redhat_rsa ~/.ssh/id_rsa ~/.ssh/id_github_rsa'
+alias sshadd='ssh-add ~/.ssh/id_ecdsa ~/.ssh/id_github_rsa'
 alias sshinit='ssh-agent -s > ${HOME}/SSH-AGENT; source ${HOME}/SSH-AGENT; sshadd'
 
 # a lot of work I have does ip addresses which I need to sort in ip

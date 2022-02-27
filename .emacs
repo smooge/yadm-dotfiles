@@ -59,7 +59,7 @@
  '(js-indent-level 2)
  '(mail-user-agent 'gnus-user-agent)
  '(package-selected-packages
-   '(babel babel-repl csv-mode dash easy-hugo f jinja2-mode json-mode markdown-changelog markdown-mode markdown-mode+ markdown-toc markdownfmt ox-asciidoc ox-gfm ox-html5slide ox-hugo ox-json ox-minutes toc-org yaml-mode))
+   '(babel babel-repl csv-mode dash easy-hugo f jinja2-mode json-mode markdown-changelog markdown-mode markdown-mode+ markdown-toc markdownfmt ox-asciidoc ox-gfm ox-html5slide ox-hugo ox-minutes toc-org yaml-mode))
  '(perl-tab-to-comment t))
 
 (require 'package)
@@ -141,7 +141,6 @@
 (setq org-log-done t)
 (add-hook 'org-mode-hook '(lambda () (setq fill-column 72)))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-(require 'ox-json)
 (require 'ox-hugo)
 
 ; The default for "uniquifying" buffer names sucks

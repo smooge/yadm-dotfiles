@@ -43,7 +43,7 @@ fi
 # ~/.local/bin so they aren't distracting. We need to look for both
 # and set up the shell PATH appropriately
 
-for pathlet in "${HOME}/bin" "${HOME}/.local/bin"; do
+for pathlet in "${HOME}/bin" "${HOME}/.local/bin" "${HOME}/go/bin"; do
     # Check to see if the path exists
     if [ -d ${pathlet} ]; then
 	# Now check to see if the directory is already in the path. Hat
