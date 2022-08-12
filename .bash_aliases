@@ -68,3 +68,7 @@ fi
 alias canihazip4='curl -4 https://ipv4.icanhazip.com'
 alias canihazip6='curl -6 https://ipv6.icanhazip.com'
 
+
+## Get your ip address
+alias canihazip4='curl -4 https://ipv4.icanhazip.com'
+alias canihazip6='curl -6 https://ipv6.icanhazip.com'

@@ -103,11 +103,13 @@ if [ -f "${HOME}/.bash_functions" ]; then
   source "${HOME}/.bash_functions"
 fi
 
-## If git prompt is available set it up.
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-   source /usr/share/git-core/contrib/completion/git-prompt.sh
-   export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-fi
+##
+## Pull in segments from various sub-items
+if [ -d "${HOME}/.bash.d" ]; then
+    for file in ${HOME}/.bash.d/*sh; do
+	source ${file}
+    done
+fi	
 
 # Check to see if you have an ssh-agent running on the system.
 # ToDo: have a way to turn this off on boxes where you don't have
@@ -134,7 +136,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 
 ###
 ### EOF
