@@ -59,8 +59,9 @@
  '(js-indent-level 2)
  '(mail-user-agent 'gnus-user-agent)
  '(package-selected-packages
-   '(babel babel-repl csv-mode dash easy-hugo f jinja2-mode json-mode markdown-changelog markdown-mode markdown-mode+ markdown-toc markdownfmt ox-asciidoc ox-gfm ox-html5slide ox-hugo ox-minutes toc-org yaml-mode))
- '(perl-tab-to-comment t))
+   '(ox-minutes ox-hugo ox-asciidoc json-mode adoc-mode babel babel-repl csv-mode dash easy-hugo f jinja2-mode markdown-changelog markdown-mode markdown-mode+ markdown-toc markdownfmt toc-org yaml-mode))
+ '(perl-tab-to-comment t)
+ '(warning-suppress-types '((comp))))
 
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")

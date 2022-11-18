@@ -1,54 +1,53 @@
 # -*- mode: conf -*-
 ## A basic gitconfig for my default user.
 [user]
-    name = Stephen Smoogen
-    email = ssmoogen@redhat.com
-    signingkey = 0xF20A1093D7840F95
+    name		= Stephen Smoogen
+    email		= ssmoogen@redhat.com
+    signingkey		= 0xF20A1093D7840F95
 
 [push]
-    default = current
+    default		= current
 
 [pull]
-    rebase = true
+    rebase		= true
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-	ui = true
+    diff		= auto
+    status		= auto
+    branch		= auto
+    interactive		= auto
+    ui			= true
 
 [core]
-    excludesfile = $HOME/.gitignore_global
+    excludesfile	= $HOME/.gitignore_global
 
 [branch]
-    autosetuprebase = always
+    autosetuprebase	= always
 
 [apply]
-    whitespace = fix
+    whitespace		= fix
  
 [rebase]
-    autoStash = true
+    autoStash		= true
 
 [gpg]
-    program = gpg2
+    program		= gpg2
 
 [init]
-    defaultBranch = main
+    defaultBranch	= main
 
 [alias]
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lol2 = log --graph --format='%h %s (%an)'
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    d = diff --src-prefix='a/ ' --dst-prefix='b/ '
-    s = status --short
-    pr = pull --rebase
-    ca = commit --amend
-    can = commit --amend --no-edit
-    unadd = reset HEAD
-    cdiff = diff --color-words
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    lol                 = log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=10
+    lol2		= log --graph --format='%h %s (%an)'
+    lola		= log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=10 --all
+    d			= diff --src-prefix='a/ ' --dst-prefix='b/ '
+    s			= status --short
+    pr			= pull --rebase
+    ca			= commit --amend
+    can			= commit --amend --no-edit
+    unadd		= reset HEAD
+    cdiff		= diff --color-words
+    lst                 = ls-tree --abbrev=10 HEAD
+    logp		= log -p
+    logs		= log --stat
+    logf		= log --format=fuller
